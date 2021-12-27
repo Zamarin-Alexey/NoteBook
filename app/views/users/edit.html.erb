@@ -1,6 +1,59 @@
-<h1>Editing User</h1>
+<div class="form-sign-in">
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">Что-то пошло не так...</div>
+  <% end %>
+  <%= form_with(model: @user, local: true, class: "row g-3") do |form| %>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Редактирование данных пользователя</h1>
 
-<%= render 'form', user: @user %>
+    <div class="row g-2">
+      <div class="col">
+        <div class="form-floating">
+          <%= form.text_field :f_name, required: true, class: "form-control", :placeholder => 'Имя' %>
+          <label for="floatingInput" style="margin-left: 10px">Имя</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating">
+          <%= form.text_field :s_name, required: true, class: "form-control", :placeholder => 'Фамилия' %>
+          <label for="floatingInput" style="margin-left: 10px">Фамилия</label>
+        </div>
+      </div>
+    </div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :username, required: true, class: "form-control", :placeholder => 'Логин' %>
+        <label for="floatingInput" style="margin-left: 10px">Логин</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.email_field :email, required: true, class: "form-control", :placeholder => 'email' %>
+        <label for="floatingInput" style="margin-left: 10px">email</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="col">
+        <div class="form-floating">
+          <%= form.password_field :password, required: true, class: "form-control", :placeholder => 'Пароль' %>
+          <label for="floatingInput" style="margin-left: 10px">Пароль</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating">
+          <%= form.password_field :password_confirmation, required: true, class: "form-control", :placeholder => 'Повторите пароль' %>
+          <label for="floatingInput" style="margin-left: 10px">Повторите пароль</label>
+        </div>
+      </div>
+    </div>
+    <div class="row g-2 justify-content-center">
+      <div class="btn-lg col-6">
+        <%= form.submit value: 'Сохранить изменения', required: true, class: "w-100 btn btn-primary" %>
+      </div>
+    </div>
+
+  <% end %>
+  </form>
+</div>
