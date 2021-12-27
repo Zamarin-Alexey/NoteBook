@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row" style="margin-bottom: 40px; margin-top: 40px">
+    <div class="col-8"><h2><%= @note.header %></h2></div>
+    <div class="col-2" style="align-content: center">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <%= button_to('Изменить', edit_note_path(@note), method: :get, class: "btn btn-outline-primary") %>
+        <%= button_to('Удалить', @note, :method => "delete", data: true, class: "btn btn-outline-primary", style: "margin-left: 15px") %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6"><%= @note.content %></div>
+  </div>
 
-<p>
-  <strong>Header:</strong>
-  <%= @note.header %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+</div>
