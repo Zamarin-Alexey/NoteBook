@@ -1,5 +1,28 @@
-<h1>New Note</h1>
+<div class="form-note">
 
-<%= render 'form', note: @note %>
+  <% if @note.errors.any? %>
+    <div class="alert alert-danger" role="alert">Что-то пошло не так...</div>
+  <% end %>
+  <%= form_with(model: @note, local: true, class: "row g-3") do |form| %>
 
-<%= link_to 'Back', notes_path %>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Новая заметка</h1>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :header, required: true, class: "form-control", :placeholder => 'Заголовок' %>
+        <label for="floatingInput" style="margin-left: 10px">Заголовок</label>
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_area :content, required: true, class: "form-control", :placeholder => 'Описание' %>
+        <label for="floatingInput" style="margin-left: 10px">Описание</label>
+      </div>
+    </div>
+    <div class="row g-2" style="justify-content: center">
+      <div class="col-6" style="margin-bottom: 40px; margin-top: 20px">
+        <%= form.submit value: 'Добавить', class: "w-100 btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
