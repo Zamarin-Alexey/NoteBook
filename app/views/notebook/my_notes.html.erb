@@ -1,2 +1,10 @@
-<h1>Notebook#my_notes</h1>
-<p>Find me in app/views/notebook/my_notes.html.erb</p>
+<div class="container">
+  <h2>Мои заметки</h2>
+  <% @notes.each do |note| %>
+    <div class="row note">
+      <%= #button_to(Отметить выполненной) %>
+      <%= note.header %>
+      <%= note.content %>
+    </div>
+  <% end %>
+</div>
