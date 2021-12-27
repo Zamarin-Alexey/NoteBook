@@ -1,24 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="row" style="margin-bottom: 10px">
+    <div class="col-10">
+      <h3>Personal account</h3>
+    </div>
+    <div class="col-2">
+      <%= button_to('Change', edit_user_path(@user), method: :get, class: "btn btn-outline-secondary btn-sm") %>
+    </div>
+  </div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <div class="row justify-content-center">
+    <ul class="list-group">
+      <li class="list-group-item"><label style="margin-right: 5px">Name: </label><span><%= @user.name %></span></li>
+      <li class="list-group-item"><label style="margin-right: 5px">Username: </label><span><%= @user.username %></span></li>
+      <li class="list-group-item"><label style="margin-right: 5px">Email: </label><span><%= @user.email %></span></li>
+    </ul>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
