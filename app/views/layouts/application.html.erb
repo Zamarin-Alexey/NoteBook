@@ -13,7 +13,7 @@
 <body>
 
 <% if !current_page?(session_login_path) && !current_page?(new_user_path) %>
-  <header class="d-flex justify-content-end" style="margin-bottom: 20px">
+  <header class="d-flex justify-content-end" style="margin-bottom: 50px">
     <ul class="nav nav-pills">
       <li class="nav-item"><a href=<%= root_path %> class="nav-link" aria-current="page">Мои заметки</a></li>
       <li class="nav-item"><a href="/users/<%= current_user.id %>" class="nav-link">Личный кабинет</a></li>
