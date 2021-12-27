@@ -6,17 +6,9 @@
     <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Редактирование данных пользователя</h1>
 
     <div class="row g-2">
-      <div class="col">
-        <div class="form-floating">
-          <%= form.text_field :f_name, required: true, class: "form-control", :placeholder => 'Имя' %>
-          <label for="floatingInput" style="margin-left: 10px">Имя</label>
-        </div>
-      </div>
-      <div class="col">
-        <div class="form-floating">
-          <%= form.text_field :s_name, required: true, class: "form-control", :placeholder => 'Фамилия' %>
-          <label for="floatingInput" style="margin-left: 10px">Фамилия</label>
-        </div>
+      <div class="form-floating">
+        <%= form.text_field :name, required: true, class: "form-control", :placeholder => 'Имя' %>
+        <label for="floatingInput" style="margin-left: 10px">Имя</label>
       </div>
     </div>
 
