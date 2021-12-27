@@ -28,3 +28,7 @@
     padding: 15px;
     margin: auto;
 }
+a:hover {
+    color: unset;
+    background-color: inherit;
+}
