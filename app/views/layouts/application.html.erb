@@ -11,12 +11,13 @@
 </head>
 
 <body>
+
 <% if !current_page?(session_login_path) && !current_page?(session_create_path) %>
-  <header class="d-flex justify-content-end py-3">
+  <header class="d-flex justify-content-end" style="margin-bottom: 20px">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Мои заметки</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Личный кабинет</a></li>
-      <li class="nav-item"><a class="nav-link" href=<%= session_logout_path %>>Выйти</a></li>
+      <li class="nav-item"><a href=<%= root_path %> class="nav-link" aria-current="page">Мои заметки</a></li>
+      <li class="nav-item"><a href="/users/<%= current_user.id %>" class="nav-link">Личный кабинет</a></li>
+      <li class="nav-item"><a class="nav-link" href=<%= session_logout_path %> >Выйти</a></li>
     </ul>
   </header>
 <% end %>

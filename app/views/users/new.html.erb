@@ -1,0 +1,44 @@
+<div class="form-sign-in">
+
+  <%= form_with(model: @user, local: true, class: "row g-3") do |form| %>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Fill the gaps</h1>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :name, required: true, class: "form-control", :placeholder => 'name' %>
+        <label for="floatingInput" style="margin-left: 10px">Name</label>
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :username, required: true, class: "form-control", :placeholder => 'username' %>
+        <label for="floatingInput" style="margin-left: 10px">Username</label>
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.email_field :email, required: true, class: "form-control", :placeholder => 'email' %>
+        <label for="floatingInput" style="margin-left: 10px">Email</label>
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="col">
+        <div class="form-floating">
+          <%= form.password_field :password, required: true, class: "form-control", :placeholder => 'password' %>
+          <label for="floatingInput" style="margin-left: 10px">Password</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating">
+          <%= form.password_field :password_confirmation, required: true, class: "form-control", :placeholder => 'password' %>
+          <label for="floatingInput" style="margin-left: 10px">Password confirmation</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-1"></div>
+    <div class="col-10"><%= form.submit value: 'Submit', class: "w-100 btn btn-primary" %></div>
+    <div class="col-1"></div>
+
+  <% end %>
+</div>

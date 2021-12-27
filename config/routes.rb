@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :notes
   resources :users
   get 'session/login'
-  get 'session/create'
+  post 'session/create'
   get 'session/logout'
 
   root to: 'notebook#my_notes'
