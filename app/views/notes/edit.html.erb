@@ -1,6 +1,25 @@
-<h1>Editing Note</h1>
+<div class="form-note">
+  <% if @note.errors.any? %>
+    <div class="alert alert-danger" role="alert">Что-то пошло не так...</div>
+  <% end %>
+  <%= form_with(model: @note, local: true, class: "row g-3") do |form| %>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"></h1>
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :header, required: true, class: "form-control", :placeholder => 'Заголовок' %>
+        <label for="floatingInput" style="margin-left: 10px"><%= 'Заголовок' %></label>
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_area :content, required: true, class: "form-control", :placeholder => 'Задача' %>
+        <label for="floatingInput" style="margin-left: 10px">Задача</label>
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-10">
+      <%= form.submit value: 'Сохранить изменения', class: "w-100 btn btn-primary" %>
+    </div>
+  <% end %>
 
-<%= render 'form', note: @note %>
-
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+</div>

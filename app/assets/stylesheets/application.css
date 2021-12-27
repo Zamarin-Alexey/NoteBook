@@ -20,3 +20,11 @@
     padding: 15px;
     margin: auto;
 }
+
+.form-note {
+    text-align: center;
+    width: 100%;
+    max-width: 720px;
+    padding: 15px;
+    margin: auto;
+}
