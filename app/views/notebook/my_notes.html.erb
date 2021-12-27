@@ -1,16 +1,20 @@
 <div><h3 style="margin: 20px">My notes</h3></div>
 <div class="container-md">
-  <% if @notes.empty? %>
-    <div> Empty :(</div>
-  <% else %>
-    <% @notes.each do |note| %>
-      <div class="card">
-        <div class="card-header"><h5><%= note[:header] %></h5></div>
-        <div class="card-body">
-          <p class="card-text">Тут будет дата создания заметки</p>
-          <a href="/notes/<% note[:id] %>" class="btn btn-primary">Details</a>
+  <div class="row" style="margin: 20px"><a class="btn btn-outline-primary" href=<%= new_note_path %>>Добавить заметку</a></div>
+  <div class="row">
+    <% if @notes.empty? %>
+      <div> Тут пока пусто :(</div>
+    <% else %>
+      <% @notes.each do |note| %>
+        <div class="card">
+          <div class="card-header"><h5><%= note[:header] %></h5></div>
+          <div class="card-body">
+            <p class="card-text">Тут будет дата создания заметки</p>
+            <a href="/notes/
+              <% note[:id] %>" class="btn btn-outline-primary">Details</a>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
