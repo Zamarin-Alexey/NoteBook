@@ -2,7 +2,7 @@ en:
   logout: 'Log out'
   login: 'Log in'
   register: 'Register'
-  change: 'Change'
+  change: 'Edit'
   delete: 'Delete'
   sign_in: 'Sign in'
   save: 'Save'
@@ -14,6 +14,8 @@ en:
     no_notes: 'You have no notes yet'
     fill_gaps: 'Please fill all gaps'
     edit_gaps: 'Please make changes to some fields'
+    details: 'details'
+    user_data_edition: 'Edition user data'
 
   user:
     username: 'Login'
@@ -29,6 +31,14 @@ en:
 
   error:
     empty_gaps: 'The fields must be filled in with correct data!'
+
+  info:
+    note_was_created: "Note was successfully created!"
+    note_was_updated: "Note was successfully updated!"
+    note_was_destroyed: "Note was successfully destroyed!"
+    user_was_created: "User was successfully created!"
+    user_was_updated: "User was successfully updated!"
+    user_was_destroyed: "User was successfully destroyed!"
 
   activerecord:
     errors:

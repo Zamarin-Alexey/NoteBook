@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include SessionHelper
   before_action :require_login
@@ -6,15 +8,11 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    unless signed_in?
-      flash[:danger] = 'Требуется логин'
-      redirect_to :session_login
-    end
+    redirect_to :session_login unless signed_in?
   end
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
     I18n.with_locale(locale, &action)
   end
-
 end

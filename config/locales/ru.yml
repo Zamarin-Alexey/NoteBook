@@ -2,7 +2,7 @@ ru:
   logout: 'Выйти'
   login: 'Войти'
   register: 'Зарегестрироваться'
-  change: 'Изменить'
+  change: 'Редактировать'
   delete: 'Удалить'
   sign_in: 'Войти'
   save: 'Сохранить'
@@ -14,6 +14,8 @@ ru:
     no_notes: 'У вас пока ни одной заметки'
     fill_gaps: 'Пожалуйста, заполните все поля'
     edit_gaps: 'Пожалуйста, внесите изменения в поля'
+    details: 'Подробнее'
+    user_data_edition: 'Редактирование данных пользователя'
 
   user:
     username: 'Логин'
@@ -26,6 +28,18 @@ ru:
   note:
     header: 'Заголовок'
     content: 'Описание'
+
+  error:
+    empty_gaps: 'Поля должны быть заполнены корректными данными!'
+
+
+  info:
+    note_was_created: "Заметка была успешно создана"
+    note_was_updated: "Заметка была успешно обновлена"
+    note_was_destroyed: "Заметка была успешно удалена"
+    user_was_created: "Пользователь был успешно создан"
+    user_was_updated: "Пользователь был успешно обновлен"
+    user_was_destroyed: "Пользователь был успешно удален"
 
   activerecord:
     errors:

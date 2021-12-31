@@ -3,7 +3,9 @@
 one:
   header: MyString
   content: MyText
+  user_id: 1
 
 two:
   header: MyString
   content: MyText
+  user_id: 1

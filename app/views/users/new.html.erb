@@ -1,43 +1,43 @@
 <div class="form-sign-in">
 
   <%= form_with(model: @user, local: true, class: "row g-3") do |form| %>
-    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Fill the gaps</h1>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"><%= t('login') %></h1>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :name, required: true, class: "form-control", :placeholder => 'name' %>
-        <label for="floatingInput" style="margin-left: 10px">Name</label>
+        <%= form.text_field :name, required: true, class: "form-control", :placeholder => t('user.name') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('user.name') %></label>
       </div>
     </div>
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :username, required: true, class: "form-control", :placeholder => 'username' %>
-        <label for="floatingInput" style="margin-left: 10px">Username</label>
+        <%= form.text_field :username, required: true, class: "form-control", :placeholder => t('user.username') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('user.username') %></label>
       </div>
     </div>
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.email_field :email, required: true, class: "form-control", :placeholder => 'email' %>
-        <label for="floatingInput" style="margin-left: 10px">Email</label>
+        <%= form.email_field :email, required: true, class: "form-control", :placeholder => t('user.email') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('user.email') %></label>
       </div>
     </div>
     <div class="row g-2">
       <div class="col">
         <div class="form-floating">
-          <%= form.password_field :password, required: true, class: "form-control", :placeholder => 'password' %>
-          <label for="floatingInput" style="margin-left: 10px">Password</label>
+          <%= form.password_field :password, required: true, class: "form-control", :placeholder => t('user.password') %>
+          <label for="floatingInput" style="margin-left: 10px"><%= t('user.password') %></label>
         </div>
       </div>
       <div class="col">
         <div class="form-floating">
-          <%= form.password_field :password_confirmation, required: true, class: "form-control", :placeholder => 'password' %>
-          <label for="floatingInput" style="margin-left: 10px">Password confirmation</label>
+          <%= form.password_field :password_confirmation, required: true, class: "form-control", :placeholder => t('user.conf_password') %>
+          <label for="floatingInput" style="margin-left: 10px"><%= t('user.conf_password') %></label>
         </div>
       </div>
     </div>
 
     <div class="col-1"></div>
-    <div class="col-10"><%= form.submit value: 'Submit', class: "w-100 btn btn-primary" %></div>
+    <div class="col-10"><%= form.submit value: t('save'), class: "w-100 btn btn-primary" %></div>
     <div class="col-1"></div>
 
   <% end %>

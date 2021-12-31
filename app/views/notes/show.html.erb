@@ -3,8 +3,8 @@
     <div class="col-8"><h2><%= @note.header %></h2></div>
     <div class="col-2" style="align-content: center">
       <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <%= button_to('Изменить', edit_note_path(@note), method: :get, class: "btn btn-outline-primary") %>
-        <%= button_to('Удалить', @note, :method => "delete", data: true, class: "btn btn-outline-primary", style: "margin-left: 15px") %>
+        <%= button_to(t('change'), edit_note_path(@note), method: :get, class: "btn btn-outline-primary") %>
+        <%= button_to(t('delete'), @note, :method => "delete", data: true, class: "btn btn-outline-primary", style: "margin-left: 15px") %>
       </div>
     </div>
   </div>

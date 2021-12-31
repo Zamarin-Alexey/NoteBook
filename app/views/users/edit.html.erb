@@ -1,48 +1,48 @@
 <div class="form-sign-in">
   <% if @user.errors.any? %>
-    <div class="alert alert-danger" role="alert">Что-то пошло не так...</div>
+    <div class="alert alert-danger" role="alert"><%= t('error.empty_gaps') %></div>
   <% end %>
   <%= form_with(model: @user, local: true, class: "row g-3") do |form| %>
-    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Редактирование данных пользователя</h1>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"><%= t('page.user_data_edition') %></h1>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :name, required: true, class: "form-control", :placeholder => 'Имя' %>
-        <label for="floatingInput" style="margin-left: 10px">Имя</label>
+        <%= form.text_field :name, required: true, class: "form-control", :placeholder => t('user.name') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('user.name') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :username, required: true, class: "form-control", :placeholder => 'Логин' %>
-        <label for="floatingInput" style="margin-left: 10px">Логин</label>
+        <%= form.text_field :username, required: true, class: "form-control", :placeholder => t('user.username') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('user.username') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.email_field :email, required: true, class: "form-control", :placeholder => 'email' %>
-        <label for="floatingInput" style="margin-left: 10px">email</label>
+        <%= form.email_field :email, required: true, class: "form-control", :placeholder => t('user.email') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('user.email') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="col">
         <div class="form-floating">
-          <%= form.password_field :password, required: true, class: "form-control", :placeholder => 'Пароль' %>
-          <label for="floatingInput" style="margin-left: 10px">Пароль</label>
+          <%= form.password_field :password, required: true, class: "form-control", :placeholder => t('user.password') %>
+          <label for="floatingInput" style="margin-left: 10px"><%= t('user.password') %></label>
         </div>
       </div>
       <div class="col">
         <div class="form-floating">
-          <%= form.password_field :password_confirmation, required: true, class: "form-control", :placeholder => 'Повторите пароль' %>
-          <label for="floatingInput" style="margin-left: 10px">Повторите пароль</label>
+          <%= form.password_field :password_confirmation, required: true, class: "form-control", :placeholder => t('user.conf_password') %>
+          <label for="floatingInput" style="margin-left: 10px"><%= t('user.conf_password') %></label>
         </div>
       </div>
     </div>
     <div class="row g-2 justify-content-center">
       <div class="btn-lg col-6">
-        <%= form.submit value: 'Сохранить изменения', required: true, class: "w-100 btn btn-primary" %>
+        <%= form.submit value: t('save'), required: true, class: "w-100 btn btn-primary" %>
       </div>
     </div>
 

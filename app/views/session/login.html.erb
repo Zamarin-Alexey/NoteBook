@@ -2,14 +2,14 @@
   <h1 class="h3 fw-normal" style="margin-top: 70px; margin-bottom: 50px">Вход</h1>
   <%= form_with url: session_create_url, method: :post, local: true,class:'row g-3 justify-content-center' do |f| %>
     <div class="form-floating">
-      <%= f.text_field :username, required: true, class: 'form-control',placeholder:'Имя пользователя'%>
-      <%= f.label :username,'Имя пользователя',style:"margin-left: 10px"%>
+      <%= f.text_field :username, required: true, class: 'form-control',placeholder:t('user.username')%>
+      <%= f.label :username,t('user.username'),style:"margin-left: 10px"%>
     </div>
     <div class="form-floating">
-      <%= f.password_field :password, required: true, class: 'form-control',placeholder:'Пароль'%>
-      <%= f.label :password,'Пароль',style:"margin-left: 10px"%>
+      <%= f.password_field :password, required: true, class: 'form-control',placeholder:t('user.password')%>
+      <%= f.label :password,t('user.password'),style:"margin-left: 10px"%>
     </div>
     <%= f.submit 'Войти', class:'col-4 btn btn-lg btn-primary'%>
   <% end %>
-  <%= link_to 'Зарегистрироваться', new_user_path %>
+  <%= link_to t('register'), new_user_path %>
 </div>

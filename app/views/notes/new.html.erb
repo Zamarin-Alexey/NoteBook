@@ -1,27 +1,27 @@
 <div class="form-note">
 
   <% if @note.errors.any? %>
-    <div class="alert alert-danger" role="alert">Что-то пошло не так...</div>
+    <div class="alert alert-danger" role="alert">t('error.empty_gaps')</div>
   <% end %>
   <%= form_with(model: @note, local: true, class: "row g-3") do |form| %>
 
-    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Новая заметка</h1>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"><%= t('page.add_note') %></h1>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :header, required: true, class: "form-control", :placeholder => 'Заголовок' %>
-        <label for="floatingInput" style="margin-left: 10px">Заголовок</label>
+        <%= form.text_field :header, required: true, class: "form-control", :placeholder => t('note.header') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('note.header') %></label>
       </div>
     </div>
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_area :content, required: true, class: "form-control", :placeholder => 'Описание' %>
-        <label for="floatingInput" style="margin-left: 10px">Описание</label>
+        <%= form.text_area :content, required: true, class: "form-control", :placeholder => t('note.content') %>
+        <label for="floatingInput" style="margin-left: 10px"><%= t('note.content') %></label>
       </div>
     </div>
     <div class="row g-2" style="justify-content: center">
       <div class="col-6" style="margin-bottom: 40px; margin-top: 20px">
-        <%= form.submit value: 'Добавить', class: "w-100 btn btn-primary" %>
+        <%= form.submit value: t('page.add_note'), class: "w-100 btn btn-primary" %>
       </div>
     </div>
   <% end %>

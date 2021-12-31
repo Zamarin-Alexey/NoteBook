@@ -1,48 +1,28 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    password = Faker::Lorem.word
+    @user = User.create(name: Faker::Lorem.word, username: Faker::Lorem.word, email: "#{Faker::Lorem.word}@mail.ru",
+                        password: password, password_confirmation: password)
+    post session_create_url, params: { username: @user.username, password: password }
   end
 
-  test "should get index" do
-    get users_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_user_url
-    assert_response :success
-  end
-
-  test "should create user" do
-    assert_difference('User.count') do
-      post users_url, params: { user: { email: @user.email, name: @user.name, password_digest: @user.password_digest, username: @user.username } }
-    end
-
-    assert_redirected_to user_url(User.last)
-  end
-
-  test "should show user" do
+  test 'should show user' do
     get user_url(@user)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_user_url(@user)
     assert_response :success
   end
 
-  test "should update user" do
-    patch user_url(@user), params: { user: { email: @user.email, name: @user.name, password_digest: @user.password_digest, username: @user.username } }
-    assert_redirected_to user_url(@user)
-  end
-
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete user_url(@user)
-    end
-
-    assert_redirected_to users_url
+  test 'should update user' do
+    get edit_user_path(@user),
+        params: { user: { name: Faker::Lorem.word, username: Faker::Lorem.word } }
+    assert_response :success
   end
 end
